@@ -143,6 +143,7 @@ class MyServer(BaseHTTPRequestHandler):
                 user = self.getUser()
                 if user == False:
                     self.createUser()
+                    self.userUpload()
                 else:
                     self.userUpload()
             #print("succesfully recived image post. Now stored in imgCache.png")
