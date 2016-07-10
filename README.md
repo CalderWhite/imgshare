@@ -1,4 +1,5 @@
 # ImgShare
+Free, easy image sharing using c9.io
 ## About
 This is a little server written in python that I wrote up in a day    
 that allows you to upload images without any account, or fees.    
