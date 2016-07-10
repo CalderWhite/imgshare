@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ImgShare</title>
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+        <script language="Javascript">
+function uploadImg(Tag){
+    var f = Tag.files[0];
+    var r = new FileReader();
+    r.onload = function(e){
+        var contents = e.target.result;
+        var encoded = btoa(contents);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST','clientUpload',true);
+        xhr.setRequestHeader('datafile-length',encoded.length);
+        xhr.setRequestHeader('dataFileName',f.name);
+        xhr.send(encoded);
+    };
+    r.readAsBinaryString(f);
+    
+}
+</script>
+    </head>
+        <div id="uploadBox">
+            <input type="file" name="datafile" /></br>
+            <button onclick="uploadImg(document.getElementsByName('datafile')[0])">Upload</button>
+        </div>
+    </body>
+</html>
