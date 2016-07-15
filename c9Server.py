@@ -7,14 +7,22 @@ binaryData = {
     'gif' : 'image/gif',
     'png' : 'image/gif',
     'ico' : 'image/icon',
+<<<<<<< HEAD
     'jpg' : 'image/jpg',
     'otf' : 'font/opentype'
+=======
+    'jpg' : 'image/jpg'
+>>>>>>> origin/master
 }
 textData = {
     'html' : 'text/html',
     'css' : 'text/css',
+<<<<<<< HEAD
     'js' : 'text/js',
     'json' : 'application/json'
+=======
+    'js' : 'text/js'
+>>>>>>> origin/master
 }
 def currentTime():
     x = datetime.datetime.now()
@@ -31,7 +39,11 @@ class MyServer(BaseHTTPRequestHandler):
         user["uploads"] += 1
         user["last_active"] = currentTime()
         wh = open('userData/IpList.json','w')
+<<<<<<< HEAD
         wh.write(json.dumps(users, indent=4, sort_keys=True))
+=======
+        wh.write(json.dumps(users))
+>>>>>>> origin/master
         open(user["root_path"] + "/" + fileName,'a')
         body = self.getBody()
         # we load the body, now we need to decode it and write the binary data to the image cache
@@ -50,7 +62,11 @@ class MyServer(BaseHTTPRequestHandler):
         }
         os.makedirs("userData/userFiles/" + userIp.replace(".","-"))
         wf = open('userData/IpList.json','w')
+<<<<<<< HEAD
         jsonStr = json.dumps(users, indent=4, sort_keys=True)
+=======
+        jsonStr = json.dumps(users)
+>>>>>>> origin/master
         wf.write(jsonStr)
         pass
     def getUser(self):
@@ -73,6 +89,7 @@ class MyServer(BaseHTTPRequestHandler):
         except FileNotFoundError:
             return None
         return r
+<<<<<<< HEAD
     def do_normalGET(self):
         # if the request has no path, send the default html page
         self.send_response(200)
@@ -85,18 +102,24 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_header("Content-type", "text/html")
         self.end_headers()
         self.wfile.write(bytes(open("pages/redirectMobile.html",'r').read(), "utf-8"))
+=======
+>>>>>>> origin/master
     def do_GET(self):
         global binaryData
         global textData
         if self.path[1:] == "favicon.ico":
             self.send_response(406)
+<<<<<<< HEAD
             self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(bytes("No favicon.ico",'utf-8'))
+=======
+>>>>>>> origin/master
         # ---------------------------
         if self.headers.__contains__("custom-action"):
             pass
         else:
+<<<<<<< HEAD
             #print(self.headers)
             if self.path == "/":
                 # check if mobile (though this isn't the most thorough way, it's the quickest)
@@ -108,6 +131,14 @@ class MyServer(BaseHTTPRequestHandler):
                 else:
                     self.do_normalGET()
                 #self.wfile.write(bytes(open("Client/Client.html",'r').read(), "utf-8"))
+=======
+            if self.path == "/":
+                # if the request has no path, send the default html page
+                self.send_response(200)
+                self.send_header("Content-type", "text/html")
+                self.end_headers()
+                self.wfile.write(bytes(open("Client/Client.html",'r').read(), "utf-8"))
+>>>>>>> origin/master
                 #print(bytes(open("Client/Client.html",'r').read(), "utf-8"))
             else:
                 print("Got File Req")
@@ -158,7 +189,11 @@ class MyServer(BaseHTTPRequestHandler):
         self.wfile.write(bytes(data,encoding))
     def do_POST(self):
         action = self.path[1:]
+<<<<<<< HEAD
         if action == "Client/clientUpload" or "Client/clientUpload":
+=======
+        if action == "clientUpload":
+>>>>>>> origin/master
             if self.headers.__contains__("dataFileName") == False:
                 self.simpleResponse(400,"text/plain","Error 400, Bad request (dataFileName header missing)")
             else:
@@ -175,4 +210,8 @@ myServer = HTTPServer((hostName, hostPort), MyServer)
 print(time.asctime(), "Server Starts - %s:%s" % (hostName, hostPort))
 
 myServer.serve_forever()
+<<<<<<< HEAD
 print(time.asctime(), "Server Ends - %s:%s" % (hostName, hostPort))
+=======
+print(time.asctime(), "Server Ends - %s:%s" % (hostName, hostPort))
+>>>>>>> origin/master

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # ImgShare, now with Mobile!
+=======
+# ImgShare
+>>>>>>> origin/master
 Free, easy image sharing using c9.io
 ## About
 This is a little server written in python that I wrote up in a day    
