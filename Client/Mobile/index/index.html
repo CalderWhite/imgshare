@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ImgShare - Mobile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stylesheet.css">
+        <script>
+function reConfigureButtons(bl){
+    if(bl){
+        var btn1 = document.getElementById("btn1");
+        // the - 90 is just to give a little room between btn1 and btn2
+        btn1.style = "position:absolute;left:" + (window.innerWidth / 2 - 90 - (141) / 2).toString() + "px;float:left;";
+        var btn2 = document.getElementById("btn2");
+        // - 40 is the same as the - 80 in the previous expression, except it's half so there's a gap between the two links
+        btn2.style = "position:absolute;left:" + (window.innerWidth / 2 - 45 - (144) / 2 + 141).toString() + "px;float:left;";
+    }
+    else{
+        var btn2 = document.getElementById("btn2");
+        btn2.style = "";
+        btn2.style.position = "absolute";
+        btn2.style.top = "15em";
+        btn2.style.left = ((window.innerWidth / 2) - (144 / 2)).toString() + "px";
+        var btn1 = document.getElementById("btn1");
+        btn1.style.left = ((window.innerWidth / 2) - (141 / 2)).toString() + "px";
+    }
+}
+function Boot(){
+    reConfigureButtons();
+    window.onresize = function(event){
+        if(window.innerWidth < 355){
+            reConfigureButtons(false);
+        }
+        else{
+            reConfigureButtons(true);
+        }
+    };
+}
+        </script>
+    </head>
+    <body onload="Boot()"></body>
+        <h1>ImgShare</h1>
+        <p>Welcome to ImgShare Mobile!</p>
+        <p>Since this is the mobile version of the page, it is stripped down to make things faster!</p>
+        <a id="btn1" class="myButton" href="../Upload.html" style="position:absolute;float:left;">Upload Images</a>
+        <a id="btn2" class="myButton" href="#" onclick="alert('this feature is not yet implimented')" style="position:absolute;float:left;">Browse Images</a>
+    </body>
+</html>

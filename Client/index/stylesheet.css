@@ -1,0 +1,84 @@
+h1 {
+    color: #4ddbff;
+    font-family: ‘Arial Black’, Gadget, sans-serif;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+@font-face {
+    font-family: unbuntu_title;
+    src: url(../Fonts/Ubuntu-Title.otf);
+}
+.welcome{
+    font-family: unbuntu_title;
+    font-size: 20px;
+    color:white;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+.backImg{
+    position: fixed;
+    top:0px;
+    left:0px;
+    background-image: url(../Images/earth-wallpapers-5.jpg);
+    height:100%;
+    width:100%;
+    z-index: -1;
+}
+.myButton{
+    -moz-transition: all .1s ease-in;
+    -o-transition: all .1s ease-in;
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+    border-radius: 5px;
+    background-color: #00ccff;
+    font-family: ‘Arial Black’, Gadget, sans-serif;
+    font-size: 18px;
+    position: relative;
+    color:white;
+    padding: 10px;
+    cursor:default;
+    margin-left:5px;
+    margin-right:5px;
+    text-decoration: none;
+}
+.myButton:hover {
+    background-color:#008fb3;
+    cursor: pointer;
+}
+.topButtons{
+    left:40%;
+    position: absolute;
+}
+.actionOptions{
+    position:absolute;
+    top:110%;
+    left:40%;
+    height:100%;
+}
+/*
+.actionText{
+    position: absolute;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color : white;
+    font-family: unbuntu_title;
+    font-size: 20px;
+    top:110%;
+}
+*/
+.actionText{
+    font-family: unbuntu_title;
+    font-size: 20px;
+    color:white;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 60%;
+    text-align:center;
+}

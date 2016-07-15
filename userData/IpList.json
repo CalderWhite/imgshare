@@ -1,1 +1,17 @@
-{}
+{
+    "103.10.197.2": {
+        "last_active": "11-July-2016_0:5:52",
+        "root_path": "userData/userFiles/103-10-197-2",
+        "uploads": 1
+    },
+    "216.16.230.126": {
+        "last_active": "13-July-2016_23:17:36",
+        "root_path": "userData/userFiles/216-16-230-126",
+        "uploads": 1
+    },
+    "99.236.237.30": {
+        "last_active": "15-July-2016_17:51:16",
+        "root_path": "userData/userFiles/99-236-237-30",
+        "uploads": 4
+    }
+}

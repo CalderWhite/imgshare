@@ -1,0 +1,30 @@
+body{
+    /*background-color: #4ddbff;*/
+    background-image: url(../../Images/MobileBackground.png);
+}
+h1, p{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    color:black;
+    font-family:Sans-serif;
+    font-weight:400;
+}
+h1{
+    font-family:Impact;
+}
+.myButton{
+    -moz-transition: all .1s ease-in;
+    -o-transition: all .1s ease-in;
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+    border-radius: 5px;
+    background-color: #00ff00;
+    font-family: ‘Arial Black’, Gadget, sans-serif;
+    font-size: 18px;
+    color:white;
+    padding: 10px;
+    cursor:default;
+    text-decoration: none;
+}
